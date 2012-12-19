@@ -1,0 +1,27 @@
+ORIG_PN="clutter-gst"
+inherit gnome2
+
+NAME="clutter-gst2.0"
+VERSION=1.9.92
+RELEASE=1
+CATEGORY="GNOME"
+SUMMARY="OpenGL-based animated GStreamer library"
+DESCRIPTION="Clutter is an open source software library for creating fast,
+visually rich and animated graphical user interfaces. Clutter uses OpenGL for
+rendering but with an API which hides the underlying GL complexity from the
+developer. The Clutter API is intended to be easy to use, efficient and
+flexible."
+HOMEPAGE="http://clutter-project.org/"
+#SRC_URI="http://www.clutter-project.org/sources/${ORIG_PN}/${PV_MAJ_MIN}/${ORIG_PN}-${PV}.tar.bz2"
+
+PATCH_URI="
+	0.10.0-no-undefined.patch
+	1.9.92-gtk-doc.patch
+"
+
+PKG_NAMES="lib${PN}_0 lib${PN}-devel girepository-ClutterGst2.0 gstreamer1.0-plugins-clutter"
+girepository_ClutterGst2_0_CONTENTS="usr/*/gir*/ClutterGst-2.0.*"
+libclutter_gst2_0_0_REQUIRES="gstreamer1.0-plugins-good gstreamer1.0-plugins-bad-free"
+libclutter_gst2_0_0_CONTENTS="usr/bin/*-2.0-0.dll usr/share/doc/"
+libclutter_gst2_0_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/gtk-doc/"
+gstreamer1_0_plugins_clutter_CONTENTS="usr/lib/gstreamer-1.0/*"
