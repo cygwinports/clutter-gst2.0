@@ -2,7 +2,7 @@ ORIG_PN="clutter-gst"
 inherit gnome2
 
 NAME="clutter-gst2.0"
-VERSION=2.0.8
+VERSION=2.0.10
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="OpenGL-based animated GStreamer library"
@@ -18,9 +18,12 @@ PATCH_URI="
 	1.9.92-gtk-doc.patch
 "
 
-PKG_NAMES="lib${NAME}_0 lib${NAME}-devel girepository-ClutterGst2.0 gstreamer1.0-plugins-clutter"
+PKG_NAMES="lib${NAME}_0 lib${NAME}-devel lib${NAME}-doc girepository-ClutterGst2.0 gstreamer1.0-plugins-clutter"
 girepository_ClutterGst2_0_CONTENTS="usr/*/gir*/ClutterGst-2.0.*"
 libclutter_gst2_0_0_REQUIRES="gstreamer1.0-plugins-good gstreamer1.0-plugins-bad-free"
 libclutter_gst2_0_0_CONTENTS="usr/bin/*-2.0-0.dll usr/share/doc/"
-libclutter_gst2_0_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/gtk-doc/"
+libclutter_gst2_0_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
+libclutter_gst2_0_doc_CATEGORY="Doc"
+libclutter_gst2_0_doc_CONTENTS="usr/share/gtk-doc/"
+gstreamer1_0_plugins_clutter_CATEGORY="Video"
 gstreamer1_0_plugins_clutter_CONTENTS="usr/lib/gstreamer-1.0/*"
